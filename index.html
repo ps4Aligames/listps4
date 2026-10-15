@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ALI GAMES - PS4 200 FINAL</title>
+<title>ALI GAMES - PS4 200 - FINAL NO IMPORT EXPORT</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overflow-x:hidden;position:relative}
@@ -70,14 +70,15 @@ body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overfl
 <div class="bg-vignette"></div><div class="overlay1"></div><div class="overlay2"></div>
 <div class="content">
 <div class="brand-title"><h1>ALI GAMES</h1></div>
-<div class="brand-sub">FINAL - AUTO SAVE GITHUB - NO IMPORT EXPORT</div>
+<div class="brand-sub">FINAL - TANPA IMPORT EXPORT - AUTO SAVE GITHUB</div>
 <div class="big-title"><span class="white">SALES &</span><span class="white">SERVICE PS</span></div>
-<div class="info"><div class="icon-circle">📍</div><div class="info-text"><div class="main">Jln Ahmad Yani No 238<br>Jaya Plaza Lantai Dasar Blok I No 10</div><div class="sub">Bandung Kota - Auto Save</div></div></div>
-<div class="info"><div class="icon-circle">✔</div><div class="info-text"><div class="main">WA: 0895708629977</div><div class="sub">200 Game - Save Otomatis</div></div></div>
+<div class="info"><div class="icon-circle">📍</div><div class="info-text"><div class="main">Jln Ahmad Yani No 238<br>Jaya Plaza Lantai Dasar Blok I No 10</div><div class="sub">Bandung Kota</div></div></div>
+<div class="info"><div class="icon-circle">✔</div><div class="info-text"><div class="main">WA: 0895708629977</div><div class="sub">Biru Tua Kontras + Hujan Normal + AutoSave</div></div></div>
 <button class="wa-btn" onclick="window.open('https://wa.me/62895708629977','_blank')">💬 Chat WhatsApp</button>
 </div></div>
+
 <div class="section">
-<div class="koleksi-label"><div class="line"></div><span>KOLEKSI PS4 200 FINAL</span></div>
+<div class="koleksi-label"><div class="line"></div><span>KOLEKSI PS4 200 - FINAL</span></div>
 <div class="section-title">Koleksi <span class="muted">PS4</span></div>
 <div class="search-fields">
 <input id="q" placeholder="Cari judul...">
@@ -94,45 +95,192 @@ body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overfl
 <div class="chips" id="chips"></div>
 <div class="grid" id="grid"></div>
 </div>
+
 <div class="sticky"><div id="cnt">0 dipilih - <span id="autoSaveInfo" style="color:#a8ffbf">Loading...</span></div><button class="wa-btn" onclick="openEditor()" style="margin:0;padding:10px 20px;font-size:13px">Order PS4</button></div>
+
 <div id="orderEditor" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99;align-items:center;justify-content:center;padding:20px">
 <div style="background:#111;border:1px solid #222;border-radius:16px;max-width:520px;width:100%;padding:18px">
 <div style="font-weight:800;margin-bottom:10px">Edit Pesanan PS4</div>
 <textarea id="orderText" style="width:100%;min-height:220px;background:#0a0a0a;border:1px solid #222;color:#fff;padding:12px;border-radius:10px;font-size:13px"></textarea>
 <div style="display:flex;gap:10px;margin-top:12px"><button class="manual-btn" onclick="sendEdited()">Kirim WA</button><button class="manual-btn dark" onclick="closeEditor()">Tutup</button></div>
 </div></div>
+
 <input type="file" id="filePicker" accept="image/*" style="display:none">
+
 <script>
 const GENRES=["Semua","Action Adventure","Open World","FPS / Shooting","RPG / Anime / Musou","Fighting","Racing","Sports","Family / Casual"];
 const GENRE_ID={"Semua":"Semua","Action Adventure":"Aksi & Petualangan","Open World":"Dunia Terbuka","FPS / Shooting":"Tembak-menembak","RPG / Anime / Musou":"RPG / Anime / Perang Massal","Fighting":"Pertarungan","Racing":"Balapan","Sports":"Olahraga","Family / Casual":"Keluarga & Santai"};
 function genreLabel(g){return GENRE_ID[g]||g;}
 let active="Semua";let GAMES=[];let sel=new Set();let pendingCoverIndex=null;
-const DB_NAME='AliGamesDB_Final_v5';
+
+const DB_NAME='AliGamesDB_Final_NoImport';
 const STORE_NAME='manual';
-function openDB(){return new Promise((res,rej)=>{const r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=e=>{const db=e.target.result;if(!db.objectStoreNames.contains(STORE_NAME)) db.createObjectStore(STORE_NAME);};r.onsuccess=e=>res(e.target.result);r.onerror=e=>rej(e.target.error);});}
-async function saveToDB(){try{const db=await openDB();const tx=db.transaction(STORE_NAME,'readwrite');tx.objectStore(STORE_NAME).put(GAMES,'games');return new Promise((a,b)=>{tx.oncomplete=()=>a(true);tx.onerror=()=>b(tx.error);});}catch(e){return false;}}
-async function loadFromDB(){try{const db=await openDB();const tx=db.transaction(STORE_NAME,'readonly');const req=tx.objectStore(STORE_NAME).get('games');return new Promise((a,b)=>{req.onsuccess=()=>a(req.result);req.onerror=()=>b(req.error);});}catch(e){return null;}}
-function showStatus(m,ok){const el=document.getElementById('saveStatus');el.textContent=m;el.style.display='block';el.style.background=ok?'rgba(0,230,118,0.15)':'rgba(255,204,106,0.15)';el.style.border='1px solid '+(ok?'rgba(0,230,118,0.4)':'rgba(255,204,106,0.4)');el.style.color=ok?'#a8ffbf':'#ffcc6a';setTimeout(()=>el.style.display='none',4000);document.getElementById('autoSaveInfo').textContent=m;setTimeout(()=>{document.getElementById('autoSaveInfo').textContent='Auto-save aktif - '+GAMES.filter(g=>g.title||g.cover).length+' terisi'},3000);}
-async function saveManual(){const ok=await saveToDB();if(ok) showStatus('✅ Tersimpan otomatis! '+GAMES.filter(g=>g.title||g.cover).length+' game',true);else showStatus('❌ Gagal',false);}
-function saveToGitHub(){saveManual();const blob=new Blob([document.documentElement.outerHTML],{type:'text/html'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='index.html';a.click();URL.revokeObjectURL(url);showStatus('🚀 index.html ter-download - upload ke GitHub',true);}
+
+function openDB(){
+  return new Promise((resolve, reject)=>{
+    const req=indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded=e=>{
+      const db=e.target.result;
+      if(!db.objectStoreNames.contains(STORE_NAME)) db.createObjectStore(STORE_NAME);
+    };
+    req.onsuccess=e=>resolve(e.target.result);
+    req.onerror=e=>reject(e.target.error);
+  });
+}
+async function saveToDB(){
+  try{
+    const db=await openDB();
+    const tx=db.transaction(STORE_NAME,'readwrite');
+    tx.objectStore(STORE_NAME).put(GAMES, 'games');
+    return new Promise((res,rej)=>{tx.oncomplete=()=>res(true); tx.onerror=()=>rej(tx.error);});
+  }catch(e){return false;}
+}
+async function loadFromDB(){
+  try{
+    const db=await openDB();
+    const tx=db.transaction(STORE_NAME,'readonly');
+    const req=tx.objectStore(STORE_NAME).get('games');
+    return new Promise((res,rej)=>{req.onsuccess=()=>res(req.result); req.onerror=()=>rej(req.error);});
+  }catch(e){return null;}
+}
+
+function showStatus(msg, ok){
+  const el=document.getElementById('saveStatus');
+  el.textContent=msg;
+  el.style.display='block';
+  el.style.background=ok?'rgba(0,230,118,0.15)':'rgba(255,204,106,0.15)';
+  el.style.border='1px solid '+(ok?'rgba(0,230,118,0.4)':'rgba(255,204,106,0.4)');
+  el.style.color=ok?'#a8ffbf':'#ffcc6a';
+  setTimeout(()=>el.style.display='none',4000);
+  document.getElementById('autoSaveInfo').textContent=msg;
+  setTimeout(()=>{document.getElementById('autoSaveInfo').textContent='Auto-save aktif - '+GAMES.filter(g=>g.title||g.cover).length+' terisi'},3000);
+}
+
+async function saveManual(){
+  const ok=await saveToDB();
+  if(ok) showStatus('✅ Tersimpan otomatis! '+GAMES.filter(g=>g.title||g.cover).length+' game', true);
+  else showStatus('❌ Gagal simpan', false);
+}
+
+function saveToGitHub(){
+  saveManual();
+  const htmlContent=document.documentElement.outerHTML;
+  const blob=new Blob([htmlContent],{type:'text/html'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download='index.html';
+  a.click();
+  URL.revokeObjectURL(url);
+  showStatus('🚀 index.html ter-download, upload ke ps4aligames/DAFTARgameps4', true);
+}
+
 let saveTimeout=null;
-function autoSave(){clearTimeout(saveTimeout);document.getElementById('autoSaveInfo').textContent='Menyimpan...';saveTimeout=setTimeout(async()=>{await saveManual();},600);}
-function renderChips(){const c=document.getElementById('chips');c.innerHTML='';GENRES.forEach(g=>{const cnt=g==='Semua'?GAMES.length:GAMES.filter(x=>x.genre===g).length;const b=document.createElement('button');b.className='chip'+(active===g?' on':'');b.textContent=genreLabel(g)+' ('+cnt+')';b.onclick=()=>{active=g;renderChips();render();};c.appendChild(b);});}
+function autoSave(){
+  clearTimeout(saveTimeout);
+  document.getElementById('autoSaveInfo').textContent='Menyimpan...';
+  saveTimeout=setTimeout(async ()=>{await saveManual();}, 600);
+}
+
+function renderChips(){
+  const c=document.getElementById('chips');c.innerHTML='';
+  GENRES.forEach(g=>{
+    const cnt=g==='Semua'?GAMES.length:GAMES.filter(x=>x.genre===g).length;
+    const b=document.createElement('button');
+    b.className='chip'+(active===g?' on':'');
+    b.textContent=genreLabel(g)+' ('+cnt+')';
+    b.onclick=()=>{active=g;renderChips();render();};
+    c.appendChild(b);
+  });
+}
 function addCard(){GAMES.push({title:"",code:"",genre:"Action Adventure",cover:""});renderChips();render();autoSave();}
 function addCardBulk(){for(let i=0;i<4;i++) GAMES.push({title:"",code:"",genre:"Action Adventure",cover:""});renderChips();render();autoSave();}
-function clearAll(){if(!confirm('Reset 200 slot?')) return;GAMES=[];for(let i=0;i<200;i++) GAMES.push({title:"",code:"",genre:"Action Adventure",cover:""});sel.clear();renderChips();render();saveManual();}
-function removeCard(idx){GAMES.splice(idx,1);const n=new Set();sel.forEach(i=>{if(i<idx) n.add(i);else if(i>idx) n.add(i-1);});sel=n;renderChips();render();autoSave();}
+function clearAll(){if(!confirm('Reset 200 slot kosong?')) return;GAMES=[];for(let i=0;i<200;i++) GAMES.push({title:"",code:"",genre:"Action Adventure",cover:""});sel.clear();renderChips();render();saveManual();}
+function removeCard(idx){GAMES.splice(idx,1);const n=new Set();sel.forEach(i=>{if(i<idx) n.add(i); else if(i>idx) n.add(i-1);});sel=n;renderChips();render();autoSave();}
 function pickCover(idx){pendingCoverIndex=idx;document.getElementById('filePicker').click();}
-document.getElementById('filePicker').addEventListener('change',e=>{const file=e.target.files[0];if(!file||pendingCoverIndex===null) return;const r=new FileReader();r.onload=ev=>{GAMES[pendingCoverIndex].cover=ev.target.result;render();autoSave();showStatus('📸 Foto terpasang + auto-save',true);};r.readAsDataURL(file);e.target.value='';});
-function coverHtml(g,idx){if(g.cover) return '<div class="cover"><img src="'+g.cover+'"><div class="badge-num">'+(idx+1)+'</div><button class="remove-card" onclick="event.stopPropagation();removeCard('+idx+')">x</button><div class="edit-badge" onclick="event.stopPropagation();pickCover('+idx+')">GANTI</div></div>';return '<div class="cover" style="background:#0e0e0e;border:2px dashed #555"><div class="placeholder"><b>COVER KOSONG</b><span>Klik foto</span></div><div class="badge-num">'+(idx+1)+'</div><button class="remove-card" onclick="event.stopPropagation();removeCard('+idx+')">x</button></div>';}
-function render(){const q=document.getElementById('q').value.toLowerCase();const grid=document.getElementById('grid');grid.innerHTML='';let list=GAMES.map((g,i)=>({g,i})).filter(({g})=> active==='Semua'||g.genre===active).filter(({g})=> !q|| (g.title+' '+g.code).toLowerCase().includes(q));list.forEach(({g,i:realIdx})=>{const on=sel.has(realIdx);const card=document.createElement('div');card.className='card'+(on?' on':'');const st=(g.title||'').replace(/"/g,'&quot;');const sc=(g.code||'').replace(/"/g,'&quot;');card.innerHTML=coverHtml(g,realIdx)+'<div class="foot"><input placeholder="Judul PS4..." value="'+st+'" oninput="GAMES['+realIdx+'].title=this.value;autoSave()" onclick="event.stopPropagation()"><input class="small" placeholder="Kode..." value="'+sc+'" oninput="GAMES['+realIdx+'].code=this.value;autoSave()" onclick="event.stopPropagation()"></div>';card.onclick=(e)=>{if(e.target.tagName==='INPUT'||e.target.tagName==='BUTTON') return;if(!GAMES[realIdx].cover){pickCover(realIdx);return;}if(sel.has(realIdx)) sel.delete(realIdx);else sel.add(realIdx);render();};grid.appendChild(card);});document.getElementById('cnt').textContent=sel.size+' dipilih';}
+document.getElementById('filePicker').addEventListener('change', e=>{
+  const file=e.target.files[0];
+  if(!file || pendingCoverIndex===null) return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    GAMES[pendingCoverIndex].cover=ev.target.result;
+    render();
+    autoSave();
+    showStatus('📸 Foto terpasang + auto-save', true);
+  };
+  reader.readAsDataURL(file);
+  e.target.value='';
+});
+function coverHtml(g,idx){
+  if(g.cover) return '<div class="cover"><img src="'+g.cover+'"><div class="badge-num">'+(idx+1)+'</div><button class="remove-card" onclick="event.stopPropagation();removeCard('+idx+')">x</button><div class="edit-badge" onclick="event.stopPropagation();pickCover('+idx+')">GANTI</div></div>';
+  return '<div class="cover" style="background:#0e0e0e;border:2px dashed #555"><div class="placeholder"><b>COVER KOSONG</b><span>Klik foto</span></div><div class="badge-num">'+(idx+1)+'</div><button class="remove-card" onclick="event.stopPropagation();removeCard('+idx+')">x</button></div>';
+}
+function render(){
+  const q=document.getElementById('q').value.toLowerCase();
+  const grid=document.getElementById('grid');grid.innerHTML='';
+  let list=GAMES.map((g,i)=>({g,i})).filter(({g})=> active==='Semua'||g.genre===active).filter(({g})=> !q|| (g.title+' '+g.code).toLowerCase().includes(q));
+  list.forEach(({g,i:realIdx})=>{
+    const on=sel.has(realIdx);
+    const card=document.createElement('div');card.className='card'+(on?' on':'');
+    const st=(g.title||'').replace(/"/g,'&quot;');const sc=(g.code||'').replace(/"/g,'&quot;');
+    card.innerHTML=coverHtml(g,realIdx)+'<div class="foot"><input placeholder="Judul PS4..." value="'+st+'" oninput="GAMES['+realIdx+'].title=this.value;autoSave()" onclick="event.stopPropagation()"><input class="small" placeholder="Kode..." value="'+sc+'" oninput="GAMES['+realIdx+'].code=this.value;autoSave()" onclick="event.stopPropagation()"></div>';
+    card.onclick=(e)=>{if(e.target.tagName==='INPUT'||e.target.tagName==='BUTTON') return;if(!GAMES[realIdx].cover){pickCover(realIdx);return;}if(sel.has(realIdx)) sel.delete(realIdx);else sel.add(realIdx);render();};
+    grid.appendChild(card);
+  });
+  document.getElementById('cnt').textContent=sel.size+' dipilih';
+}
 function grouped(){const m={};Array.from(sel).forEach(i=>{const g=GAMES[i];if(!g) return;const gr=g.genre||'Action Adventure';if(!m[gr]) m[gr]=[];m[gr].push(g);});return m;}
 function make(){const cust=document.getElementById('cust').value.trim();if(!cust){alert('Isi nama pembeli');return '';}if(!sel.size){alert('Pilih game');return '';}let t='';const map=grouped();Object.keys(map).forEach(gr=>{t+='['+genreLabel(gr)+']\n';map[gr].forEach((g,i)=>{t+=(i+1)+'. '+(g.title||'Tanpa Judul')+(g.code?' - '+g.code:'')+'\n';});t+='\n';});return 'Halo Ali Games, order PS4:\n'+t+'Total: '+sel.size+' game\nNama: '+cust;}
 function openEditor(){const msg=make();if(!msg) return;document.getElementById('orderText').value=msg;document.getElementById('orderEditor').style.display='flex';}
 function sendEdited(){const m=document.getElementById('orderText').value.trim();if(!m) return;window.open('https://wa.me/62895708629977?text='+encodeURIComponent(m),'_blank');}
 function closeEditor(){document.getElementById('orderEditor').style.display='none';}
-(async function init(){document.getElementById('autoSaveInfo').textContent='Loading...';const saved=await loadFromDB();if(saved&&Array.isArray(saved)&&saved.length>0){GAMES=saved;showStatus('✅ Auto-load '+GAMES.filter(g=>g.title||g.cover).length+' game',true);}else{for(let i=0;i<200;i++) GAMES.push({title:"",code:"",genre:"Action Adventure",cover:""});showStatus('ℹ️ 200 slot siap - auto-save aktif',true);}renderChips();render();})();
-document.getElementById('q').addEventListener('input',render);
-function createRainNormal(){const full=document.getElementById('psRainFull');const head=document.getElementById('psRainHeader');if(!full) return;full.innerHTML='';head.innerHTML='';const symbols=[{char:'△',cls:'triangle'},{char:'○',cls:'circle'},{char:'×',cls:'x'},{char:'□',cls:'square'}];for(let i=0;i<65;i++){const s=symbols[Math.floor(Math.random()*symbols.length)];const el=document.createElement('div');el.className='ps-drop '+s.cls;el.textContent=s.char;el.style.left=(Math.random()*100)+'%';el.style.animationDelay=(Math.random()*10)+'s';el.style.animationDuration=(8+Math.random()*6)+'s';el.style.fontSize=(20+Math.random()*24)+'px';el.style.animationName='psFallNormal';full.appendChild(el);}for(let i=0;i<20;i++){const s=symbols[Math.floor(Math.random()*symbols.length)];const el=document.createElement('div');el.className='ps-drop '+s.cls;el.textContent=s.char;el.style.left=(Math.random()*100)+'%';el.style.animationDelay=(Math.random()*6)+'s';el.style.animationDuration=(6+Math.random()*5)+'s';el.style.fontSize=(18+Math.random()*18)+'px';el.style.animationName='psFallHeaderNormal';head.appendChild(el);}}createRainNormal();
+
+(async function init(){
+  document.getElementById('autoSaveInfo').textContent='Loading...';
+  const saved=await loadFromDB();
+  if(saved && Array.isArray(saved) && saved.length>0){
+    GAMES=saved;
+    showStatus('✅ Auto-load '+GAMES.filter(g=>g.title||g.cover).length+' game', true);
+  }else{
+    for(let i=0;i<200;i++) GAMES.push({title:"",code:"",genre:"Action Adventure",cover:""});
+    showStatus('ℹ️ 200 slot siap - auto-save aktif', true);
+  }
+  renderChips();render();
+})();
+
+document.getElementById('q').addEventListener('input', render);
+
+function createRainNormal(){
+  const full=document.getElementById('psRainFull');
+  const head=document.getElementById('psRainHeader');
+  if(!full) return;
+  full.innerHTML=''; head.innerHTML='';
+  const symbols=[{char:'△',cls:'triangle'},{char:'○',cls:'circle'},{char:'×',cls:'x'},{char:'□',cls:'square'}];
+  for(let i=0;i<65;i++){
+    const s=symbols[Math.floor(Math.random()*symbols.length)];
+    const el=document.createElement('div');
+    el.className='ps-drop '+s.cls;
+    el.textContent=s.char;
+    el.style.left=(Math.random()*100)+'%';
+    el.style.animationDelay=(Math.random()*10)+'s';
+    el.style.animationDuration=(8+Math.random()*6)+'s';
+    el.style.fontSize=(20+Math.random()*24)+'px';
+    el.style.animationName='psFallNormal';
+    full.appendChild(el);
+  }
+  for(let i=0;i<20;i++){
+    const s=symbols[Math.floor(Math.random()*symbols.length)];
+    const el=document.createElement('div');
+    el.className='ps-drop '+s.cls;
+    el.textContent=s.char;
+    el.style.left=(Math.random()*100)+'%';
+    el.style.animationDelay=(Math.random()*6)+'s';
+    el.style.animationDuration=(6+Math.random()*5)+'s';
+    el.style.fontSize=(18+Math.random()*18)+'px';
+    el.style.animationName='psFallHeaderNormal';
+    head.appendChild(el);
+  }
+}
+createRainNormal();
 </script>
 </body></html>
