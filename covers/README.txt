@@ -1,0 +1,1 @@
+Upload JPG kesini, otomatis tampil di web
