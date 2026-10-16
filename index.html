@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ALI GAMES - PS4 Koleksi Auto Covers</title>
+<title>ALI GAMES - PS4 Koleksi - Genre Auto</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overflow-x:hidden;position:relative}
@@ -36,6 +36,7 @@ body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overfl
 .card.on{border-color:#fff;box-shadow:0 0 0 2px #fff}
 .cover{aspect-ratio:3/4;position:relative;overflow:hidden;background:#111}
 .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.badge-genre{position:absolute;bottom:8px;left:8px;background:rgba(3,16,242,0.9);color:#fff;font-size:9px;font-weight:700;padding:3px 6px;border-radius:999px;z-index:3}
 .badge-num{position:absolute;top:8px;right:8px;background:#fff;color:#0310F2;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;z-index:3}
 .foot{padding:10px;background:#111;text-align:center}
 .ft{font-size:13px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -44,7 +45,7 @@ body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overfl
 .search-fields{display:flex;flex-direction:column;gap:12px;margin:16px 0 12px;max-width:520px;position:relative;z-index:11}
 #q,#cust{padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.18);color:#fff;font-weight:600}
 #q::placeholder,#cust::placeholder{color:#d0d6ff}
-#status{margin:10px 0;padding:10px 14px;border-radius:10px;font-size:12px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);display:none}
+#status{margin:10px 0;padding:12px 14px;border-radius:10px;font-size:12px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2)}
 .ps-rain-full{position:fixed;top:0;left:0;width:100%;height:100vh;overflow:hidden;z-index:5;pointer-events:none;display:block !important}
 .ps-rain-header{position:absolute;inset:0;overflow:hidden;z-index:4;pointer-events:none;display:block !important}
 .ps-drop{position:absolute;top:-100px;user-select:none;will-change:transform;animation-name:psFallNormal;animation-timing-function:linear;animation-iteration-count:infinite;font-weight:900;opacity:0;display:block !important}
@@ -63,24 +64,23 @@ body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overfl
 <div class="bg-vignette"></div><div class="overlay1"></div><div class="overlay2"></div>
 <div class="content">
 <div class="brand-title"><h1>ALI GAMES</h1></div>
-<div class="brand-sub">SALES & SERVICE PS - KOLEKSI PS4 AUTO COVERS</div>
+<div class="brand-sub">GENRE AUTO EVALUATION - JSON READY</div>
 <div class="big-title"><span class="white">SALES &</span><span class="white">SERVICE PS</span></div>
-<div class="info"><div class="icon-circle">📍</div><div class="info-text"><div class="main">Jln Ahmad Yani No 238<br>Jaya Plaza Lantai Dasar Blok I No 10</div><div class="sub">Bandung Kota - Auto dari folder covers/</div></div></div>
-<div class="info"><div class="icon-circle">✔</div><div class="info-text"><div class="main">WA: 0895708629977</div><div class="sub">Koleksi Lengkap - Foto dari GitHub</div></div></div>
-<!-- TOMBOL CHAT WHATSAPP DI BAWAH NO HP SUDAH DIBUANG SESUAI REQUEST -->
+<div class="info"><div class="icon-circle">📍</div><div class="info-text"><div class="main">Jln Ahmad Yani No 238<br>Jaya Plaza Lantai Dasar Blok I No 10</div><div class="sub">Bandung Kota - Genre Otomatis</div></div></div>
+<div class="info"><div class="icon-circle">✔</div><div class="info-text"><div class="main">WA: 0895708629977</div><div class="sub">Genre dievaluasi dari judul</div></div></div>
 </div></div>
 <div class="section">
-<div class="koleksi-label"><div class="line"></div><span>KOLEKSI PS4 - AUTO COVERS</span></div>
+<div class="koleksi-label"><div class="line"></div><span>KOLEKSI PS4 - GENRE EVALUATED</span></div>
 <div class="section-title">Koleksi <span class="muted">PS4</span></div>
 <div class="search-fields">
 <input id="q" placeholder="Cari judul game...">
 <input id="cust" placeholder="Nama pembeli">
 </div>
-<div id="status"></div>
+<div id="status">⏳ Loading games.json + evaluasi genre...</div>
 <div class="chips" id="chips"></div>
 <div class="grid" id="grid"></div>
 </div>
-<div class="sticky"><div id="cnt">Loading covers...</div><button class="wa-btn" onclick="openEditor()" style="margin:0;padding:10px 20px;font-size:13px">Order PS4</button></div>
+<div class="sticky"><div id="cnt">Loading...</div><button class="wa-btn" onclick="openEditor()" style="margin:0;padding:10px 20px;font-size:13px">Order PS4</button></div>
 <div id="orderEditor" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99;align-items:center;justify-content:center;padding:20px">
 <div style="background:#111;border:1px solid #222;border-radius:16px;max-width:520px;width:100%;padding:18px">
 <div style="font-weight:800;margin-bottom:10px;color:#fff">Edit Pesanan PS4</div>
@@ -88,23 +88,237 @@ body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overfl
 <div style="display:flex;gap:10px;margin-top:12px"><button class="wa-btn" onclick="sendEdited()" style="margin:0">Kirim WA</button><button class="wa-btn" onclick="closeEditor()" style="margin:0;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.4)">Tutup</button></div>
 </div></div>
 <script>
-const GENRES=["Semua","Action Adventure","Open World","FPS / Shooting","RPG / Anime / Musou","Fighting","Racing","Sports","Family / Casual"];
+const GENRE_DB = {
+  "Action Adventure": [
+    "gta",
+    "grand theft auto",
+    "uncharted",
+    "god of war",
+    "gow",
+    "spider-man",
+    "spiderman",
+    "ghost of tsushima",
+    "ghost",
+    "horizon",
+    "last of us",
+    "tlou",
+    "tomb raider",
+    "assassin",
+    "assassins",
+    "batman",
+    "arkham",
+    "star wars",
+    "jedi",
+    "fallen order",
+    "sekiro",
+    "devil may cry",
+    "dmc",
+    "resident evil",
+    "re ",
+    "darksiders",
+    "infamous",
+    "prototype",
+    "watch dogs",
+    "sleeping dogs",
+    "mafia",
+    "yakuza",
+    "dying light"
+  ],
+  "Open World": [
+    "red dead",
+    "rdr",
+    "far cry",
+    "farcry",
+    "cyberpunk",
+    "witcher",
+    "skyrim",
+    "elder scrolls",
+    "assassin",
+    "gta",
+    "watch dogs",
+    "ghost of tsushima",
+    "horizon",
+    "days gone",
+    "mad max",
+    "just cause",
+    "saints row",
+    "metal gear",
+    "mgs",
+    "death stranding"
+  ],
+  "FPS / Shooting": [
+    "call of duty",
+    "cod",
+    "battlefield",
+    "bf ",
+    "doom",
+    "overwatch",
+    "pubg",
+    "fortnite",
+    "apex",
+    "destiny",
+    "borderlands",
+    "far cry",
+    "crysis",
+    "wolfenstein",
+    "halo",
+    "rainbow six",
+    "r6",
+    "counter",
+    "csgo",
+    "valorant",
+    "warzone",
+    "black ops",
+    "modern warfare",
+    "ghost recon",
+    "division"
+  ],
+  "RPG / Anime / Musou": [
+    "final fantasy",
+    "ff ",
+    "persona",
+    "dragon ball",
+    "dbz",
+    "naruto",
+    "one piece",
+    "elden ring",
+    "dark souls",
+    "bloodborne",
+    "demon souls",
+    "dragon quest",
+    "tales of",
+    "nier",
+    "kingdom hearts",
+    "monster hunter",
+    "mh ",
+    "genshin",
+    "honkai",
+    "fate",
+    "sword art",
+    "sao",
+    "attack on titan",
+    "aot",
+    "my hero",
+    "demon slayer",
+    "jujutsu",
+    "one punch",
+    "bleach",
+    "dynasty warriors",
+    "samurai warriors",
+    "berserk",
+    "nier",
+    "atelier",
+    "disgaea",
+    "dragon's dogma",
+    "witcher"
+  ],
+  "Fighting": [
+    "mortal kombat",
+    "mk ",
+    "tekken",
+    "street fighter",
+    "sf ",
+    "dragon ball fighterz",
+    "fighterz",
+    "soulcalibur",
+    "injustice",
+    "guilty gear",
+    "king of fighters",
+    "kof",
+    "smash",
+    "marvel vs",
+    "naruto storm",
+    "jump force",
+    "brawlhalla",
+    "wwe 2k",
+    "ufc"
+  ],
+  "Racing": [
+    "gran turismo",
+    "gt ",
+    "need for speed",
+    "nfs",
+    "f1 ",
+    "motogp",
+    "forza",
+    "dirt",
+    "wrc",
+    "project cars",
+    "crew",
+    "burnout",
+    "hot wheels",
+    "trackmania",
+    "grid",
+    "assetto",
+    "nascar",
+    "mxgp"
+  ],
+  "Sports": [
+    "fifa",
+    "efootball",
+    "pes ",
+    "pro evolution",
+    "nba",
+    "2k",
+    "wwe",
+    "ufc",
+    "football manager",
+    "fm ",
+    "madden",
+    "nhl",
+    "mlb",
+    "tennis",
+    "golf",
+    "pga",
+    "olympic"
+  ],
+  "Family / Casual": [
+    "minecraft",
+    "lego",
+    "crash bandicoot",
+    "crash",
+    "ratchet",
+    "clank",
+    "spyro",
+    "sackboy",
+    "little big planet",
+    "lbp",
+    "astro",
+    "rayman",
+    "sonic",
+    "mario",
+    "fall guys",
+    "overcooked",
+    "moving out",
+    "stardew",
+    "animal crossing",
+    "sims",
+    "plants vs",
+    "angry birds",
+    "just dance",
+    "singstar"
+  ]
+};
 const GENRE_ID={"Semua":"Semua","Action Adventure":"Aksi & Petualangan","Open World":"Dunia Terbuka","FPS / Shooting":"Tembak-menembak","RPG / Anime / Musou":"RPG / Anime / Perang Massal","Fighting":"Pertarungan","Racing":"Balapan","Sports":"Olahraga","Family / Casual":"Keluarga & Santai"};
 function genreLabel(g){return GENRE_ID[g]||g;}
-let active="Semua";
-let GAMES=[];
-let sel=new Set();
-
-function showStatus(msg, show){
-  const el=document.getElementById('status');
-  if(show===false){el.style.display='none'; return;}
-  el.textContent=msg; el.style.display='block';
+function evaluateGenre(title) {
+  const t = title.toLowerCase();
+  let best = "Action Adventure"; let bestScore = 0;
+  for (const [genre, kws] of Object.entries(GENRE_DB)) {
+    let score=0;
+    for (const kw of kws) { if(t.includes(kw.toLowerCase())) score++; }
+    if(score>bestScore){bestScore=score; best=genre;}
+  }
+  return best;
 }
-
+let active="Semua";let GAMES=[];let sel=new Set();
+function showStatus(msg){document.getElementById('status').textContent=msg;}
 function renderChips(){
   const c=document.getElementById('chips');c.innerHTML='';
-  GENRES.forEach(g=>{
+  const genres=["Semua","Action Adventure","Open World","FPS / Shooting","RPG / Anime / Musou","Fighting","Racing","Sports","Family / Casual"];
+  genres.forEach(g=>{
     const cnt=g==='Semua'?GAMES.length:GAMES.filter(x=>x.genre===g).length;
+    if(cnt===0 && g!=='Semua') return;
     const b=document.createElement('button');
     b.className='chip'+(active===g?' on':'');
     b.textContent=genreLabel(g)+' ('+cnt+')';
@@ -113,21 +327,16 @@ function renderChips(){
   });
 }
 function coverHtml(g,idx){
-  if(g.cover) return '<div class="cover"><img src="'+g.cover+'" loading="lazy" onerror="this.style.display=\'none\'"><div class="badge-num">'+(idx+1)+'</div></div>';
+  if(g.cover) return '<div class="cover"><img src="'+g.cover+'" loading="lazy" onerror="this.style.display=\'none\'"><div class="badge-num">'+(idx+1)+'</div><div class="badge-genre">'+genreLabel(g.genre).substring(0,10)+'</div></div>';
   return '<div class="cover" style="background:#0e0e0e"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#555;font-size:11px">NO COVER</div><div class="badge-num">'+(idx+1)+'</div></div>';
 }
-function getFilteredAndDeduped(){
-  const seenCovers=new Set();
-  const seenTitles=new Set();
-  const filtered=[];
+function getDeduped(){
+  const seen=new Set(); const filtered=[];
   GAMES.forEach((g,i)=>{
     if(!g.cover) return;
-    const coverKey=g.cover.toLowerCase();
-    const titleKey=(g.title||'').toLowerCase().trim();
-    if(seenCovers.has(coverKey)) return; // foto ganda jangan tampil
-    if(titleKey && seenTitles.has(titleKey)) return;
-    seenCovers.add(coverKey);
-    if(titleKey) seenTitles.add(titleKey);
+    const key=g.cover.toLowerCase();
+    if(seen.has(key)) return;
+    seen.add(key);
     filtered.push({g,i});
   });
   return filtered;
@@ -135,95 +344,64 @@ function getFilteredAndDeduped(){
 function render(){
   const q=document.getElementById('q').value.toLowerCase();
   const grid=document.getElementById('grid');grid.innerHTML='';
-  let list=getFilteredAndDeduped().filter(({g})=> active==='Semua'||g.genre===active).filter(({g})=> !q|| (g.title+' '+g.code).toLowerCase().includes(q));
+  let list=getDeduped().filter(({g})=> active==='Semua'||g.genre===active).filter(({g})=> !q|| (g.title+' '+g.code).toLowerCase().includes(q));
   list.forEach(({g,i:realIdx})=>{
     const on=sel.has(realIdx);
     const card=document.createElement('div');card.className='card'+(on?' on':'');
     const safeTitle=(g.title||'Tanpa Judul').replace(/</g,'&lt;');
-    const safeCode=(g.code||'').replace(/</g,'&lt;');
-    card.innerHTML=coverHtml(g,realIdx)+'<div class="foot"><div class="ft">'+safeTitle+'</div>'+(safeCode?'<div class="fc">'+safeCode+'</div>':'')+'</div>';
+    card.innerHTML=coverHtml(g,realIdx)+'<div class="foot"><div class="ft">'+safeTitle+'</div><div class="fc">'+genreLabel(g.genre)+'</div></div>';
     card.onclick=()=>{if(sel.has(realIdx)) sel.delete(realIdx);else sel.add(realIdx);render();};
     grid.appendChild(card);
   });
-  document.getElementById('cnt').textContent=sel.size+' dipilih - '+list.length+' game (duplikat disaring, dari folder covers/)';
+  document.getElementById('cnt').textContent=sel.size+' dipilih - '+list.length+' tampil - Genre: '+active;
 }
 function grouped(){const m={};Array.from(sel).forEach(i=>{const g=GAMES[i];if(!g) return;const gr=g.genre||'Action Adventure';if(!m[gr]) m[gr]=[];m[gr].push(g);});return m;}
-function make(){const cust=document.getElementById('cust').value.trim();if(!cust){alert('Isi nama pembeli');return '';}if(!sel.size){alert('Pilih game');return '';}let t='';const map=grouped();Object.keys(map).forEach(gr=>{t+='['+genreLabel(gr)+']\n';map[gr].forEach((g,i)=>{t+=(i+1)+'. '+(g.title||'Tanpa Judul')+(g.code?' - '+g.code:'')+'\n';});t+='\n';});return 'Halo Ali Games, order PS4:\n'+t+'Total: '+sel.size+' game\nNama: '+cust;}
+function make(){const cust=document.getElementById('cust').value.trim();if(!cust){alert('Isi nama pembeli');return '';}if(!sel.size){alert('Pilih game');return '';}let t='';const map=grouped();Object.keys(map).forEach(gr=>{t+='['+genreLabel(gr)+']\n';map[gr].forEach((g,i)=>{t+=(i+1)+'. '+(g.title||'Tanpa Judul')+'\n';});t+='\n';});return 'Halo Ali Games, order PS4:\n'+t+'Total: '+sel.size+' game\nNama: '+cust;}
 function openEditor(){const msg=make();if(!msg) return;document.getElementById('orderText').value=msg;document.getElementById('orderEditor').style.display='flex';}
 function sendEdited(){const m=document.getElementById('orderText').value.trim();if(!m) return;window.open('https://wa.me/62895708629977?text='+encodeURIComponent(m),'_blank');}
 function closeEditor(){document.getElementById('orderEditor').style.display='none';}
 
-function prettyTitleFromFilename(filename){
-  let name=filename.replace(/\.[^/.]+$/, ""); // hapus ekstensi
-  name=name.replace(/[-_]+/g, " "); // ganti - _ jadi spasi
-  name=name.replace(/\b\w/g, l=>l.toUpperCase()); // Title Case
-  return name;
-}
-
-async function loadCoversFromGitHub(){
-  showStatus('⏳ Loading foto dari folder covers/ di GitHub...');
-  try{
-    // Coba ambil dari GitHub API - public repo
-    const apiUrl='https://api.github.com/repos/ps4Aligames/listps4/contents/covers';
-    let res=await fetch(apiUrl);
-    if(!res.ok) throw new Error('API GitHub gagal: '+res.status);
-    let files=await res.json();
-    if(!Array.isArray(files)) throw new Error('Folder covers kosong atau bukan array');
-    
-    // Filter hanya file gambar
-    const imageFiles=files.filter(f=>f.type==='file' && /\.(jpe?g|png|webp|gif)$/i.test(f.name));
-    
-    if(imageFiles.length===0){
-      showStatus('⚠️ Folder covers/ kosong - upload JPG ke https://github.com/ps4Aligames/listps4/tree/main/covers', true);
-      GAMES=[];
-      renderChips();render();
-      return;
+async function loadGames() {
+  try {
+    // Coba load games.json dari repo
+    let res = await fetch('games.json');
+    if(res.ok) {
+      let data = await res.json();
+      GAMES = data.map(g => {
+        if(!g.genre) g.genre = evaluateGenre(g.title);
+        return g;
+      });
+      showStatus('✅ Loaded '+GAMES.length+' game dari games.json - Genre sudah dievaluasi');
+    } else {
+      // Fallback ke GitHub API covers
+      throw new Error('games.json tidak ada, fallback ke API');
     }
-    
-    // Hapus duplikat nama (case-insensitive)
-    const seen=new Set();
-    const uniqueFiles=[];
-    imageFiles.forEach(f=>{
-      const lower=f.name.toLowerCase();
-      if(seen.has(lower)) return;
-      seen.add(lower);
-      uniqueFiles.push(f);
-    });
-    
-    GAMES=uniqueFiles.map(f=>({
-      title: prettyTitleFromFilename(f.name),
-      code: 'covers/'+f.name,
-      genre: 'Action Adventure',
-      cover: 'covers/'+f.name // path relatif untuk GitHub Pages
-    }));
-    
-    showStatus('✅ Berhasil load '+GAMES.length+' foto dari folder covers/ (duplikat disaring)', true);
-    setTimeout(()=>showStatus('', false), 4000);
-    renderChips();render();
-  }catch(e){
-    console.error(e);
-    showStatus('❌ Gagal load dari GitHub API: '+e.message+' - Coba cek apakah folder covers ada dan repo public', true);
-    // Fallback: coba load dari localStorage / IndexedDB jika ada data lama
-    const DB_NAME='AliGamesDB_Final_v5';
-    const STORE_NAME='manual';
-    try{
-      const openDB=()=>new Promise((res,rej)=>{const r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=e=>{const db=e.target.result;if(!db.objectStoreNames.contains(STORE_NAME)) db.createObjectStore(STORE_NAME);};r.onsuccess=e=>res(e.target.result);r.onerror=e=>rej(e.target.error);});
-      const db=await openDB();
-      const tx=db.transaction(STORE_NAME,'readonly');
-      const req=tx.objectStore(STORE_NAME).get('games');
-      const saved=await new Promise((a,b)=>{req.onsuccess=()=>a(req.result);req.onerror=()=>b(req.error);});
-      if(saved && Array.isArray(saved) && saved.length>0){
-        GAMES=saved.filter(g=>g.cover);
-        showStatus('⚠️ API gagal, pakai data lokal '+GAMES.length+' game', true);
-        renderChips();render();
-      }
-    }catch(e2){}
+  } catch(e) {
+    console.log('Fallback ke GitHub API covers', e);
+    showStatus('⏳ games.json tidak ada, loading dari folder covers/...');
+    try {
+      const apiUrl='https://api.github.com/repos/ps4Aligames/listps4/contents/covers';
+      const res=await fetch(apiUrl);
+      const files=await res.json();
+      const imageFiles=files.filter(f=>f.type==='file' && /\.(jpe?g|png|webp|gif)$/i.test(f.name));
+      const seen=new Set();
+      const unique=[];
+      imageFiles.forEach(f=>{ const low=f.name.toLowerCase(); if(!seen.has(low)){seen.add(low); unique.push(f);} });
+      GAMES=unique.map(f=>{
+        const title=f.name.replace(/\.[^/.]+$/, "").replace(/[-_]+/g, " ").replace(/\b\w/g, l=>l.toUpperCase());
+        return { title: title, file: f.name, cover: 'covers/'+f.name, genre: evaluateGenre(title), code: 'covers/'+f.name };
+      });
+      showStatus('✅ Auto-load '+GAMES.length+' foto dari folder covers/ - Genre auto evaluasi');
+    } catch(e2) {
+      showStatus('❌ Gagal load: '+e2.message+' - Upload games.json atau foto ke covers/');
+      GAMES=[];
+    }
   }
+  renderChips();render();
 }
 
-loadCoversFromGitHub();
+loadGames();
 document.getElementById('q').addEventListener('input',render);
-
 function createRainNormal(){
   const full=document.getElementById('psRainFull');
   const head=document.getElementById('psRainHeader');
