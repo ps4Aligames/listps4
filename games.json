@@ -1,0 +1,338 @@
+[
+  {
+    "title": "Grand Theft Auto V",
+    "file": "gta5.jpg",
+    "cover": "covers/gta5.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/gta5.jpg"
+  },
+  {
+    "title": "God of War",
+    "file": "godofwar.jpg",
+    "cover": "covers/godofwar.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/godofwar.jpg"
+  },
+  {
+    "title": "God of War Ragnarok",
+    "file": "godofwar-ragnarok.jpg",
+    "cover": "covers/godofwar-ragnarok.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/godofwar-ragnarok.jpg"
+  },
+  {
+    "title": "Spider-Man",
+    "file": "spiderman.jpg",
+    "cover": "covers/spiderman.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/spiderman.jpg"
+  },
+  {
+    "title": "Spider-Man Miles Morales",
+    "file": "spiderman-miles.jpg",
+    "cover": "covers/spiderman-miles.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/spiderman-miles.jpg"
+  },
+  {
+    "title": "Ghost of Tsushima",
+    "file": "ghost-of-tsushima.jpg",
+    "cover": "covers/ghost-of-tsushima.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/ghost-of-tsushima.jpg"
+  },
+  {
+    "title": "The Last of Us Part II",
+    "file": "last-of-us-2.jpg",
+    "cover": "covers/last-of-us-2.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/last-of-us-2.jpg"
+  },
+  {
+    "title": "Uncharted 4",
+    "file": "uncharted4.jpg",
+    "cover": "covers/uncharted4.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/uncharted4.jpg"
+  },
+  {
+    "title": "Horizon Zero Dawn",
+    "file": "horizon-zero-dawn.jpg",
+    "cover": "covers/horizon-zero-dawn.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/horizon-zero-dawn.jpg"
+  },
+  {
+    "title": "Horizon Forbidden West",
+    "file": "horizon-forbidden.jpg",
+    "cover": "covers/horizon-forbidden.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/horizon-forbidden.jpg"
+  },
+  {
+    "title": "Red Dead Redemption 2",
+    "file": "red-dead-2.jpg",
+    "cover": "covers/red-dead-2.jpg",
+    "genre": "Open World",
+    "code": "covers/red-dead-2.jpg"
+  },
+  {
+    "title": "Cyberpunk 2077",
+    "file": "cyberpunk-2077.jpg",
+    "cover": "covers/cyberpunk-2077.jpg",
+    "genre": "Open World",
+    "code": "covers/cyberpunk-2077.jpg"
+  },
+  {
+    "title": "Assassins Creed Valhalla",
+    "file": "assassins-creed-valhalla.jpg",
+    "cover": "covers/assassins-creed-valhalla.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/assassins-creed-valhalla.jpg"
+  },
+  {
+    "title": "Far Cry 6",
+    "file": "far-cry-6.jpg",
+    "cover": "covers/far-cry-6.jpg",
+    "genre": "Open World",
+    "code": "covers/far-cry-6.jpg"
+  },
+  {
+    "title": "Days Gone",
+    "file": "days-gone.jpg",
+    "cover": "covers/days-gone.jpg",
+    "genre": "Open World",
+    "code": "covers/days-gone.jpg"
+  },
+  {
+    "title": "Death Stranding",
+    "file": "death-stranding.jpg",
+    "cover": "covers/death-stranding.jpg",
+    "genre": "Open World",
+    "code": "covers/death-stranding.jpg"
+  },
+  {
+    "title": "Call of Duty Modern Warfare II",
+    "file": "call-of-duty-mw2.jpg",
+    "cover": "covers/call-of-duty-mw2.jpg",
+    "genre": "FPS / Shooting",
+    "code": "covers/call-of-duty-mw2.jpg"
+  },
+  {
+    "title": "Call of Duty Warzone",
+    "file": "call-of-duty-warzone.jpg",
+    "cover": "covers/call-of-duty-warzone.jpg",
+    "genre": "FPS / Shooting",
+    "code": "covers/call-of-duty-warzone.jpg"
+  },
+  {
+    "title": "Battlefield 2042",
+    "file": "battlefield-2042.jpg",
+    "cover": "covers/battlefield-2042.jpg",
+    "genre": "FPS / Shooting",
+    "code": "covers/battlefield-2042.jpg"
+  },
+  {
+    "title": "Destiny 2",
+    "file": "destiny-2.jpg",
+    "cover": "covers/destiny-2.jpg",
+    "genre": "FPS / Shooting",
+    "code": "covers/destiny-2.jpg"
+  },
+  {
+    "title": "Overwatch 2",
+    "file": "overwatch-2.jpg",
+    "cover": "covers/overwatch-2.jpg",
+    "genre": "FPS / Shooting",
+    "code": "covers/overwatch-2.jpg"
+  },
+  {
+    "title": "Apex Legends",
+    "file": "apex-legends.jpg",
+    "cover": "covers/apex-legends.jpg",
+    "genre": "FPS / Shooting",
+    "code": "covers/apex-legends.jpg"
+  },
+  {
+    "title": "Elden Ring",
+    "file": "elden-ring.jpg",
+    "cover": "covers/elden-ring.jpg",
+    "genre": "RPG / Anime / Musou",
+    "code": "covers/elden-ring.jpg"
+  },
+  {
+    "title": "Final Fantasy XVI",
+    "file": "final-fantasy-16.jpg",
+    "cover": "covers/final-fantasy-16.jpg",
+    "genre": "RPG / Anime / Musou",
+    "code": "covers/final-fantasy-16.jpg"
+  },
+  {
+    "title": "Persona 5 Royal",
+    "file": "persona-5.jpg",
+    "cover": "covers/persona-5.jpg",
+    "genre": "RPG / Anime / Musou",
+    "code": "covers/persona-5.jpg"
+  },
+  {
+    "title": "Naruto Storm 4",
+    "file": "naruto-storm-4.jpg",
+    "cover": "covers/naruto-storm-4.jpg",
+    "genre": "RPG / Anime / Musou",
+    "code": "covers/naruto-storm-4.jpg"
+  },
+  {
+    "title": "Dragon Ball Z Kakarot",
+    "file": "dragon-ball-z-kakarot.jpg",
+    "cover": "covers/dragon-ball-z-kakarot.jpg",
+    "genre": "RPG / Anime / Musou",
+    "code": "covers/dragon-ball-z-kakarot.jpg"
+  },
+  {
+    "title": "One Piece Odyssey",
+    "file": "one-piece-odyssey.jpg",
+    "cover": "covers/one-piece-odyssey.jpg",
+    "genre": "RPG / Anime / Musou",
+    "code": "covers/one-piece-odyssey.jpg"
+  },
+  {
+    "title": "The Witcher 3",
+    "file": "witcher-3.jpg",
+    "cover": "covers/witcher-3.jpg",
+    "genre": "Open World",
+    "code": "covers/witcher-3.jpg"
+  },
+  {
+    "title": "Bloodborne",
+    "file": "bloodborne.jpg",
+    "cover": "covers/bloodborne.jpg",
+    "genre": "RPG / Anime / Musou",
+    "code": "covers/bloodborne.jpg"
+  },
+  {
+    "title": "Demon Slayer",
+    "file": "demon-slayer.jpg",
+    "cover": "covers/demon-slayer.jpg",
+    "genre": "RPG / Anime / Musou",
+    "code": "covers/demon-slayer.jpg"
+  },
+  {
+    "title": "Mortal Kombat 11",
+    "file": "mortal-kombat-11.jpg",
+    "cover": "covers/mortal-kombat-11.jpg",
+    "genre": "Fighting",
+    "code": "covers/mortal-kombat-11.jpg"
+  },
+  {
+    "title": "Tekken 7",
+    "file": "tekken-7.jpg",
+    "cover": "covers/tekken-7.jpg",
+    "genre": "Fighting",
+    "code": "covers/tekken-7.jpg"
+  },
+  {
+    "title": "Street Fighter 6",
+    "file": "street-fighter-6.jpg",
+    "cover": "covers/street-fighter-6.jpg",
+    "genre": "Fighting",
+    "code": "covers/street-fighter-6.jpg"
+  },
+  {
+    "title": "Dragon Ball FighterZ",
+    "file": "dragon-ball-fighterz.jpg",
+    "cover": "covers/dragon-ball-fighterz.jpg",
+    "genre": "Fighting",
+    "code": "covers/dragon-ball-fighterz.jpg"
+  },
+  {
+    "title": "Gran Turismo 7",
+    "file": "gran-turismo-7.jpg",
+    "cover": "covers/gran-turismo-7.jpg",
+    "genre": "Racing",
+    "code": "covers/gran-turismo-7.jpg"
+  },
+  {
+    "title": "Need for Speed Heat",
+    "file": "need-for-speed-heat.jpg",
+    "cover": "covers/need-for-speed-heat.jpg",
+    "genre": "Racing",
+    "code": "covers/need-for-speed-heat.jpg"
+  },
+  {
+    "title": "F1 23",
+    "file": "f1-23.jpg",
+    "cover": "covers/f1-23.jpg",
+    "genre": "Racing",
+    "code": "covers/f1-23.jpg"
+  },
+  {
+    "title": "MotoGP 23",
+    "file": "motogp-23.jpg",
+    "cover": "covers/motogp-23.jpg",
+    "genre": "Racing",
+    "code": "covers/motogp-23.jpg"
+  },
+  {
+    "title": "FIFA 24",
+    "file": "fifa-24.jpg",
+    "cover": "covers/fifa-24.jpg",
+    "genre": "Sports",
+    "code": "covers/fifa-24.jpg"
+  },
+  {
+    "title": "eFootball 24",
+    "file": "efootball-24.jpg",
+    "cover": "covers/efootball-24.jpg",
+    "genre": "Sports",
+    "code": "covers/efootball-24.jpg"
+  },
+  {
+    "title": "NBA 2K24",
+    "file": "nba-2k24.jpg",
+    "cover": "covers/nba-2k24.jpg",
+    "genre": "Sports",
+    "code": "covers/nba-2k24.jpg"
+  },
+  {
+    "title": "WWE 2K23",
+    "file": "wwe-2k23.jpg",
+    "cover": "covers/wwe-2k23.jpg",
+    "genre": "Sports",
+    "code": "covers/wwe-2k23.jpg"
+  },
+  {
+    "title": "Minecraft",
+    "file": "minecraft.jpg",
+    "cover": "covers/minecraft.jpg",
+    "genre": "Family / Casual",
+    "code": "covers/minecraft.jpg"
+  },
+  {
+    "title": "Lego Star Wars",
+    "file": "lego-star-wars.jpg",
+    "cover": "covers/lego-star-wars.jpg",
+    "genre": "Action Adventure",
+    "code": "covers/lego-star-wars.jpg"
+  },
+  {
+    "title": "Crash Bandicoot 4",
+    "file": "crash-bandicoot-4.jpg",
+    "cover": "covers/crash-bandicoot-4.jpg",
+    "genre": "Family / Casual",
+    "code": "covers/crash-bandicoot-4.jpg"
+  },
+  {
+    "title": "Ratchet and Clank Rift Apart",
+    "file": "ratchet-and-clank.jpg",
+    "cover": "covers/ratchet-and-clank.jpg",
+    "genre": "Family / Casual",
+    "code": "covers/ratchet-and-clank.jpg"
+  },
+  {
+    "title": "Fall Guys",
+    "file": "fall-guys.jpg",
+    "cover": "covers/fall-guys.jpg",
+    "genre": "Family / Casual",
+    "code": "covers/fall-guys.jpg"
+  }
+]
