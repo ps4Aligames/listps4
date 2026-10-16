@@ -1,1 +1,1 @@
-Upload JPG kesini, otomatis tampil di web
+Upload JPG game PS4 kesini
