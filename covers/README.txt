@@ -1,1 +1,1 @@
-Upload JPG game PS4 kesini
+Upload semua JPG game PS4 kamu ke folder ini. Nanti akan otomatis tampil semua di web.
