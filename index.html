@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ALI GAMES - PS4 Koleksi</title>
+<html lang="id"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
+<title>ALI GAMES - SALES & SERVICE PS Redup</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html{touch-action:manipulation;-webkit-text-size-adjust:100%}
 body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overflow-x:hidden;position:relative}
-.header{position:relative;background:#0310F2;overflow:hidden;min-height:340px;z-index:10}
+.header{position:relative;background:#0310F2;overflow:hidden;min-height:360px;z-index:10}
 .bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:0.85;z-index:1;filter:brightness(1.35) contrast(1.25) saturate(1.2)}
 .bg-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center 35%, rgba(3,16,242,0.02) 10%, rgba(3,16,242,0.1) 40%, rgba(3,16,242,0.7) 85%);z-index:2}
 .overlay1,.overlay2{position:absolute;inset:0;z-index:2}
 .overlay1{background:linear-gradient(180deg,rgba(3,16,242,0.05) 0%, rgba(3,16,242,0.05) 30%, rgba(3,16,242,0.6) 85%)}
 .overlay2{background:linear-gradient(90deg,rgba(3,16,242,0.15) 0%, rgba(3,16,242,0.02) 50%, rgba(3,16,242,0.2) 100%)}
 .content{position:relative;z-index:6;padding:24px 20px 14px;max-width:760px}
-.brand-title h1{font-size:28px;font-weight:900;color:#fff;letter-spacing:-0.5px}
-.big-title{margin-top:26px;font-weight:900;line-height:.88;letter-spacing:-1.5px;font-size:44px;text-shadow:0 3px 20px rgba(0,0,0,0.8)}
-.big-title .white{color:#fff;display:block}
-.info{margin-top:20px;display:flex;gap:14px}
+.brand-title h1{font-size:30px;font-weight:900;color:#fff;letter-spacing:-0.5px}
+/* === WARNA PUTIH DIREDUP LAGI - dari #FFFFFF jadi #C8C8C8 === */
+.big-title{margin-top:28px;font-weight:900;line-height:0.85;letter-spacing:-1.5px;font-size:52px;text-transform:uppercase}
+.big-title .line1{color:#C8C8C8;display:block;font-weight:900;letter-spacing:-1.2px;opacity:0.85}
+.big-title .line2{display:block;font-weight:900;letter-spacing:-1.2px;margin-top:2px}
+.big-title .line2 .white-part{color:#C8C8C8;opacity:0.85}
+.big-title .line2 .gray-part{color:#6a6a6a;font-weight:900;margin-left:8px;opacity:0.75}
+@media(min-width:400px){.big-title{font-size:56px}}
+.info{margin-top:22px;display:flex;gap:14px}
 .icon-circle{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center}
 .info-text .main{font-size:14px;font-weight:700;color:#fff;line-height:1.35}
 .info-text .sub{font-size:12px;color:#d0d6ff;margin-top:3px}
 .wa-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0310F2;font-weight:900;font-size:15px;padding:14px 24px;border-radius:999px;margin-top:12px;cursor:pointer;border:0}
-.section{padding:6px 20px 30px;background:transparent;border-top:1px solid rgba(255,255,255,.25);position:relative;z-index:10;min-height:80vh}
-.koleksi-label{display:flex;align-items:center;gap:12px;margin-top:6px}
-.line{width:32px;height:1.5px;background:#fff}
-.koleksi-label span{color:#fff;font-size:11px;letter-spacing:3px;font-weight:700}
-.section-title{font-size:28px;font-weight:800;margin-top:16px;color:#fff}
+.section{padding:10px 20px 30px;background:transparent;border-top:1px solid rgba(255,255,255,.25);position:relative;z-index:10;min-height:80vh}
 .chips{display:flex;gap:8px;overflow:auto;padding:16px 0;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
 .chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;padding:8px 16px;border-radius:999px;font-size:12px;white-space:nowrap;cursor:pointer;flex-shrink:0}
@@ -41,7 +44,7 @@ body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overfl
 .ft{font-size:12px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fc{font-size:10px;color:#9aa0a6;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(3,16,242,.95);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.3);padding:14px 20px;z-index:60;display:flex;align-items:center;justify-content:space-between}
-.search-wrap{margin:16px 0 12px;max-width:560px;position:relative;z-index:11;display:flex;gap:10px}
+.search-wrap{margin:14px 0 12px;max-width:560px;position:relative;z-index:11;display:flex;gap:10px}
 #q{flex:1;padding:14px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.18);color:#fff;font-weight:600;font-size:14px;outline:none}
 #cust{flex:1;padding:14px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.18);color:#fff;font-weight:600;font-size:14px;outline:none}
 #q::placeholder,#cust::placeholder{color:#d0d6ff}
@@ -65,17 +68,18 @@ body{background:#0310F2;color:#fff;font-family:Inter,system-ui,sans-serif;overfl
 <div class="bg-vignette"></div><div class="overlay1"></div><div class="overlay2"></div>
 <div class="content">
 <div class="brand-title"><h1>ALI GAMES</h1></div>
-<div class="big-title"><span class="white">SALES &</span><span class="white">SERVICE PS</span></div>
+<div class="big-title">
+<span class="line1">SALES &</span>
+<span class="line2"><span class="white-part">SERVICE</span><span class="gray-part">PS</span></span>
+</div>
 <div class="info"><div class="icon-circle">📍</div><div class="info-text"><div class="main">Jln Ahmad Yani No 238<br>Jaya Plaza Lantai Dasar Blok I No 10</div><div class="sub">Bandung Kota</div></div></div>
 <div class="info"><div class="icon-circle">✔</div><div class="info-text"><div class="main">WA: 0895708629977</div></div></div>
 </div></div>
 <div class="section">
-<div class="koleksi-label"><div class="line"></div><span>KOLEKSI PS4</span></div>
-<div class="section-title">Koleksi PS4 • <span id="totalCount">48 Game</span></div>
-<div class="search-wrap"><input id="q" placeholder="🔍 Cari judul game (ketik langsung)..."><input id="cust" placeholder="Nama pembeli"></div>
+<div class="search-wrap"><input id="q" placeholder="🔍 Cari judul game..."><input id="cust" placeholder="Nama pembeli"></div>
 <div class="chips" id="chips"></div>
 <div class="grid" id="grid"></div>
-<div id="noResult">❌ Tidak ada game dengan kata kunci "<span id="kw"></span>"<br><br><button onclick="clearSearch()" style="background:#fff;color:#0310F2;padding:10px 20px;border-radius:999px;border:0;font-weight:800;cursor:pointer;margin-top:10px">Tampilkan Semua</button></div>
+<div id="noResult">❌ Tidak ada hasil untuk "<span id="kw"></span>"<br><br><button onclick="clearSearch()" style="background:#fff;color:#0310F2;padding:10px 20px;border-radius:999px;border:0;font-weight:800;cursor:pointer;margin-top:10px">Tampilkan Semua</button></div>
 </div>
 <div class="sticky"><div id="cnt" style="font-weight:600;font-size:13px">Memuat...</div><button class="wa-btn" onclick="openEditor()">🛒 Order PS4</button></div>
 <div id="orderEditor" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99;align-items:center;justify-content:center;padding:20px">
@@ -113,15 +117,10 @@ function render(){
   const grid=document.getElementById('grid');
   const noResult=document.getElementById('noResult');
   grid.innerHTML='';
-  
   let filtered=ALL_GAMES.map((g,i)=>({g,i})).filter(({g})=> active==='Semua'||g.genre===active).filter(({g})=>{
     if(!q) return true;
-    let title=g.title.toLowerCase();
-    let file=g.file.toLowerCase();
-    let genre=g.genre.toLowerCase();
-    return title.includes(q) || file.includes(q) || genre.includes(q);
+    return g.title.toLowerCase().includes(q) || g.file.toLowerCase().includes(q) || g.genre.toLowerCase().includes(q);
   });
-  
   if(filtered.length===0){
     grid.style.display='none';
     noResult.style.display='block';
@@ -137,9 +136,7 @@ function render(){
       grid.appendChild(card);
     });
   }
-  
-  document.getElementById('cnt').textContent=sel.size>0? sel.size+' dipilih • '+filtered.length+' tampil' : filtered.length+' tampil • '+ALL_GAMES.length+' total';
-  document.getElementById('totalCount').textContent=ALL_GAMES.length+' Game';
+  document.getElementById('cnt').textContent=sel.size>0? sel.size+' dipilih' : '';
 }
 function clearSearch(){document.getElementById('q').value='';render();}
 function grouped(){const m={};Array.from(sel).forEach(i=>{const g=ALL_GAMES[i];if(!g) return;const gr=g.genre||'Action Adventure';if(!m[gr]) m[gr]=[];m[gr].push(g);});return m;}
@@ -165,7 +162,7 @@ async function loadGames(){
 loadGames();
 document.getElementById('q').addEventListener('input', render);
 document.getElementById('q').addEventListener('keyup', render);
-document.getElementById('q').addEventListener('paste', ()=>setTimeout(render,100));
+
 function createRainNormal(){
   const full=document.getElementById('psRainFull');
   const head=document.getElementById('psRainHeader');
